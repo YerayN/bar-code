@@ -5,7 +5,7 @@ const baseDeDatosPlatos = [
     { categoria: "Cócteles", nombre: "Mojito Clásico", descripcion: "Ron añejo, hierbabuena fresca y lima.", precio: "7.00€", alergenos: [] },
     { categoria: "Cócteles", nombre: "Gin Tonic Premium", descripcion: "Ginebra de la casa con tónica.", precio: "8.00€", alergenos: [] },
     { categoria: "Para Picar", nombre: "Nachos Supremos", descripcion: "Con queso fundido, jalapeños, guacamole.", precio: "9.50€", alergenos: ["Lactosa"] },
-    { categoria: "Para Picar", nombre: "Patatas 'Bravas de Verdad'", descripcion: "Salsa picante secreta de la casa.", precio: "6.00€", alergenos: [] },
+    { categoria: "Para Picar", nombre: "Patatas Bravas de Verdad", descripcion: "Salsa picante secreta de la casa.", precio: "6.00€", alergenos: [] },
     { categoria: "Para Picar", nombre: "Tiras de Pollo Crujiente", descripcion: "Rebozado casero con salsa de mostaza.", precio: "7.50€", alergenos: ["Gluten", "Huevo"] },
     { categoria: "Burgers", nombre: "La Burger Americana", descripcion: "Doble burger, doble bacon y queso cheddar.", precio: "12.00€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
     { categoria: "Burgers", nombre: "La Vegana Salvaje", descripcion: "Hamburguesa Beyond Meat, pan cristal.", precio: "11.50€", alergenos: ["Gluten"] }
@@ -198,7 +198,7 @@ function cerrarCarrito() {
 function enviarComandaTelegram() {
     if (totalArticulos === 0) return;
 
-    let mesa = localStorage.getItem('mesaBarCode') || "Barra (Desconocida)";
+    let mesa = localStorage.getItem('mesabarcode') || "Barra (Desconocida)";
     let notas = document.getElementById('notas-comanda').value.trim();
     
     let mensaje = `📋 <b>¡NUEVA COMANDA!</b>\n`;
