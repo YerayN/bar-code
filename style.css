@@ -1,8 +1,8 @@
 /* ==========================================================================
-   BAR CODE / EL PARLAMENTO - HOJA DE ESTILOS UNIFICADA
+   BAR CODE - HOJA DE ESTILOS UNIFICADA
    ========================================================================== */
 
-/* --- 1. VARIABLES GLOBALES (Tu paleta de colores) --- */
+/* --- 1. VARIABLES GLOBALES --- */
 :root {
     --accent-orange: #FE9400; 
     --accent-orange-hover: #e67e22;
@@ -10,7 +10,7 @@
     --accent-green-hover: #00b34a;
     --accent-dark-btn: #393C45; 
     --bg-body: #101115; 
-    --bg-card: rgba(22, 23, 27, 0.8); /* Fondo con transparencia para el efecto glass */
+    --bg-card: rgba(22, 23, 27, 0.8);
     --text-heading: #BDBDBD; 
     --text-body: #E0E3EB; 
     --shadow-card: 0 10px 40px rgba(0,0,0,0.8);
@@ -28,12 +28,10 @@ body {
     background-color: var(--bg-body);
     color: var(--text-body);
     text-align: center;
-    -webkit-overflow-scrolling: touch; /* Para un scroll suave en iPhone */
+    -webkit-overflow-scrolling: touch;
 }
 
-/* --- 3. COMPONENTES REUTILIZABLES (Cristal, Textos, Logos) --- */
-
-/* La caja principal (Efecto Glassmorphism) */
+/* --- 3. COMPONENTES REUTILIZABLES --- */
 .contenedor {
     max-width: 450px;
     margin: 0 auto;
@@ -53,8 +51,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* El logo superior (válido para clientes.html e index.html) */
-.logo-parlamento, .logo-barcode-header, .logo-cabecera {
+.logo-barcode-header, .logo-barcode {
     width: 100%;
     max-width: 250px;
     height: auto;
@@ -64,7 +61,6 @@ body {
     margin-right: auto;
 }
 
-/* Títulos y Subtítulos */
 h1 { 
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -90,11 +86,9 @@ h3 {
     align-items: center;
     justify-content: center;
 }
-
 h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 
 /* --- 4. SISTEMA DE BOTONES --- */
-
 .boton {
     display: block;
     background: linear-gradient(135deg, var(--accent-orange) 0%, #f39c12 100%);
@@ -129,7 +123,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 }
 .boton-oscuro:hover { background-color: #555; }
 
-/* Estado bloqueado para el botón anti-spam */
 .boton-bloqueado {
     opacity: 0.5;
     cursor: not-allowed;
@@ -138,8 +131,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     box-shadow: none !important;
 }
 
-/* --- 5. INPUTS Y CAJAS DE DATOS (WiFi, Peticiones) --- */
-
+/* --- 5. INPUTS Y CAJAS DE DATOS --- */
 .input-texto {
     width: 90%;
     padding: 14px;
@@ -164,9 +156,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 .datos-wifi p strong { color: var(--accent-orange); }
 
 /* --- 6. LANDING PAGE PRINCIPAL (index.html) --- */
-
 .landing-page {
-    /* Imagen de fondo desenfocada */
     background-image: linear-gradient(rgba(16, 17, 21, 0.9), rgba(16, 17, 21, 0.9)), url('img/background-bar.jpg');
     background-size: cover;
     background-position: center;
@@ -174,11 +164,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     padding-bottom: 30px;
 }
 
-.main-wrapper {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 15px;
-}
+.main-wrapper { max-width: 450px; margin: 0 auto; padding: 15px; }
 
 .glass-header, .section-container .contenedor-landing, .glass-footer {
     background-color: var(--bg-card);
@@ -195,17 +181,13 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 .hero-section { text-align: center; margin-top: 3vh; }
 .tagline { color: var(--text-heading); font-size: 14px; margin-bottom: 25px; }
 
-/* Botón con pulso llamativo */
-.pulse-button {
-    animation: pulse 2s infinite;
-}
+.pulse-button { animation: pulse 2s infinite; }
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.5); }
     70% { box-shadow: 0 0 0 10px rgba(0, 200, 83, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
 }
 
-/* Mapa e Info */
 .location-section h3 { margin-top: 0; margin-bottom: 15px; border-bottom: none;}
 .address { font-size: 15px; margin-bottom: 15px; font-weight: 600; }
 .map-wrapper {
@@ -221,15 +203,9 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 .horario-extra, .info-block.concept-block p { font-size: 12px; color: #888; }
 .info-block.concept-block { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 15px; }
 
-/* Footer y Redes Sociales */
 .footer-landing { text-align: center; }
 .footer-landing h3 { margin-top: 0; border-bottom: none; }
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-}
+.social-icons { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
 .icon-btn {
     width: 50px;
     height: 50px;
@@ -238,18 +214,20 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-weight: bold;
-    color: white;
-    font-size: 16px;
     transition: transform 0.2s;
+    overflow: hidden; /* Asegura que la imagen no se salga del borde redondeado */
 }
 .icon-btn:active { transform: scale(0.9); }
-.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.facebook { background-color: #1877F2; }
+/* Quitamos los fondos de colores si vamos a usar imágenes completas */
+.icon-btn img {
+    width: 100%; /* La imagen ocupa todo el contenedor */
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen cubriendo el área */
+    display: block;
+}
 .copyright { font-size: 11px; color: #555; margin-top: 15px; }
 
 /* --- 7. CARTA INTERACTIVA (carta.html) --- */
-
 .carta-body { padding-bottom: 40px; padding-top: 15px; }
 
 .caja-alergenos {
@@ -259,7 +237,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     border: 1px solid rgba(255, 255, 255, 0.05);
     overflow: hidden; 
 }
-
 .caja-alergenos summary {
     padding: 14px;
     color: var(--accent-orange);
@@ -273,7 +250,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     user-select: none;
 }
 .caja-alergenos summary::-webkit-details-marker { display: none; }
-
 .filtros-contenido {
     padding: 0 14px 14px 14px;
     display: flex;
@@ -282,7 +258,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 15px;
 }
-
 .etiqueta-filtro {
     display: flex;
     align-items: center;
@@ -295,10 +270,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     transition: all 0.2s ease;
 }
 .etiqueta-filtro input { display: none; }
-.etiqueta-filtro:has(input:checked) {
-    background-color: #E53935; /* Rojo alerta para alérgenos marcados */
-    color: white;
-}
+.etiqueta-filtro:has(input:checked) { background-color: #E53935; color: white; }
 
 .categorias-scroll {
     display: flex;
@@ -309,7 +281,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     scrollbar-width: none; 
 }
 .categorias-scroll::-webkit-scrollbar { display: none; }
-
 .btn-categoria {
     background-color: #1a1a1a;
     color: #aaa;
@@ -337,9 +308,8 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     margin-bottom: 15px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     animation: fadeIn 0.3s ease;
-    text-align: left; /* Textos de la carta a la izquierda */
+    text-align: left;
 }
-
 .plato-titulo {
     display: flex;
     justify-content: space-between;
@@ -353,8 +323,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 .alergenos-lista { color: #E53935; font-size: 11px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 5px;}
 .sin-alergenos { color: #888; font-size: 11px; }
 
-/* --- 8. LA VOZ DE LAS JAMS Y TERMÓMETRO (jams.html) --- */
-
+/* --- 8. LA VOZ DE LAS JAMS --- */
 .caja-termometro {
     background-color: rgba(22, 23, 27, 0.5);
     padding: 20px;
@@ -362,7 +331,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     border: 1px solid rgba(255, 255, 255, 0.05);
     margin-bottom: 20px;
 }
-
 .barra-fondo {
     width: 100%;
     height: 30px;
@@ -373,7 +341,6 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     position: relative;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
 }
-
 .barra-relleno {
     height: 100%;
     width: 0%; 
@@ -381,13 +348,120 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ajuste para que los iconos de redes encajen perfectos en el botón circular */
-.icon-btn img {
-    /* Aumentamos dramáticamente el tamaño para que llene el círculo */
-    width: 56px; 
-    height: auto;
-    display: block;
-    
-    /* Pequeño truco para que queden visualmente centrados en el círculo */
-    transform: translateY(1px); 
+/* --- 9. CARRITO DE LA COMPRA (carta.html) --- */
+#carrito-flotante {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00b34a 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(0, 200, 83, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
+.carrito-oculto { display: none !important; }
+
+.modal-oculto { display: none !important; }
+
+#modal-carrito {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: var(--bg-body); 
+    width: 90%; 
+    max-width: 400px;
+    padding: 25px; 
+    border-radius: 20px; 
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.item-carrito { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+.item-carrito .eliminar { color: #E53935; cursor: pointer; font-weight: bold; padding-left: 10px;}
+
+.botones-carrito { display: flex; gap: 10px; margin-top: 20px; }
+.botones-carrito .boton { margin: 0; width: 50%; padding: 12px; font-size: 14px;}
+
+/* --- DISEÑO DE LOS NUEVOS CONTROLES DE CANTIDAD (El Fuá) --- */
+.btn-add-initial {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #ffc163 100%);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(254, 148, 0, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+.btn-add-initial:active { transform: scale(0.9); }
+
+.controles-cantidad {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border-radius: 30px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btn-qty {
+    background: var(--accent-dark-btn);
+    border: none;
+    color: white;
+    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.btn-qty:active { background-color: var(--accent-orange); color: #000; }
+.qty-numero {
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    min-width: 15px;
+    text-align: center;
+}
+
+/* Modificamos el item del carrito en el modal para que quepan los botones */
+.modal-qty { padding: 3px; }
+.modal-qty .btn-qty { width: 28px; height: 28px; font-size: 10px; }

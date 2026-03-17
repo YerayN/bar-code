@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Carta Interactiva | El barcode</title>
+    <title>Carta Interactiva | Bar Code</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -31,15 +31,38 @@
             </div>
         </details>
 
-        <div class="categorias-scroll" id="barra-categorias">
-            </div>
+        <div class="categorias-scroll" id="barra-categorias"></div>
 
-        <div id="contenedor-carta">
-            </div>
+        <div id="contenedor-carta"></div>
 
-        <a href="clientes.html" class="boton boton-oscuro" style="margin-top: 30px;">🔙 Volver a mi mesa</a>
+        <a href="clientes.html" class="boton boton-oscuro" style="margin-top: 30px; margin-bottom: 80px;">🔙 Volver a mi mesa</a>
     </div>
 
+    <div id="carrito-flotante" class="carrito-oculto" onclick="abrirCarrito()">
+        <span id="carrito-contador">🛒 0 artículos</span>
+        <span id="carrito-total">0.00€</span>
+    </div>
+
+    <div id="modal-carrito" class="modal-oculto">
+        <div class="modal-contenido">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2 style="color: var(--accent-orange); margin: 0;">Tu Comanda</h2>
+                <span style="font-size: 20px; cursor: pointer;" onclick="cerrarCarrito()">✖️</span>
+            </div>
+            
+            <div id="lista-carrito" style="margin-bottom: 15px; max-height: 40vh; overflow-y: auto;">
+                </div>
+            
+            <textarea id="notas-comanda" class="input-texto" style="width: 100%; height: 60px; resize: none; font-size: 13px; margin-bottom: 10px;" placeholder="¿Alguna petición especial? (Ej: la burger sin cebolla, bebidas sin hielo...)"></textarea>
+
+            <h3 style="text-align: right; margin-top: 5px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">Total: <span id="total-modal" style="color: var(--accent-green); font-size: 22px;">0.00</span>€</h3>
+            
+            <button class="boton boton-verde" style="width: 100%; font-size: 18px; padding: 18px; margin-top: 10px;" onclick="enviarComandaTelegram()">Enviar a Barra</button>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+    <script src="app.js"></script>
     <script src="carta.js"></script>
 </body>
 </html>
