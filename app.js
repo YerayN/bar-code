@@ -16,11 +16,11 @@ function inicializarMesa() {
     if (mesaEnUrl) {
         // A) Viene por NFC o QR específico. Manda el enlace.
         numeroMesa = mesaEnUrl;
-        localStorage.setItem('mesaParlamento', numeroMesa);
+        localStorage.setItem('mesabarcode', numeroMesa);
         localStorage.setItem('horaEntradaMesa', ahora); // Fichamos la hora de entrada
     } else {
         // B) No hay enlace específico. Miramos la memoria del móvil.
-        let mesaGuardada = localStorage.getItem('mesaParlamento');
+        let mesaGuardada = localStorage.getItem('mesabarcode');
         let horaGuardada = localStorage.getItem('horaEntradaMesa');
         
         // Comprobamos si han pasado más de 6 horas
@@ -31,9 +31,9 @@ function inicializarMesa() {
             numeroMesa = mesaGuardada;
         } else {
             // C) Es un cliente nuevo, entró sin enlace, o han pasado más de 6 horas.
-            localStorage.removeItem('mesaParlamento'); // Limpiamos por si acaso
+            localStorage.removeItem('mesabarcode'); // Limpiamos por si acaso
             
-            numeroMesa = prompt("¡Bienvenido a El Parlamento! 🏛️\n¿En qué número de mesa estás sentado hoy?");
+            numeroMesa = prompt("¡Bienvenido a El barcode! 🏛️\n¿En qué número de mesa estás sentado hoy?");
             
             // Si le da a cancelar o no pone nada, le asignamos la barra
             if (!numeroMesa || numeroMesa.trim() === "") {
@@ -41,7 +41,7 @@ function inicializarMesa() {
             }
             
             // Guardamos los datos nuevos
-            localStorage.setItem('mesaParlamento', numeroMesa);
+            localStorage.setItem('mesabarcode', numeroMesa);
             localStorage.setItem('horaEntradaMesa', ahora);
         }
     }
@@ -55,7 +55,7 @@ function inicializarMesa() {
 
 // Función extra de UX: Por si el cliente se equivoca al escribir la mesa a mano
 function resetearMesa() {
-    localStorage.removeItem('mesaParlamento');
+    localStorage.removeItem('mesabarcode');
     localStorage.removeItem('horaEntradaMesa');
     location.reload(); // Recargamos la página para que vuelva a preguntar
 }

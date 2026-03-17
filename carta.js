@@ -1,4 +1,4 @@
-// --- 1. BASE DE DATOS DE EL PARLAMENTO ---
+// --- 1. BASE DE DATOS DE EL barcode ---
 const baseDeDatosPlatos = [
     // CERVEZAS
     { categoria: "Cervezas", nombre: "Cerveza de Barril (Media Pinta)", descripcion: "Rubia, fría y directa al grano.", precio: "2.50€", alergenos: ["Gluten"] },
