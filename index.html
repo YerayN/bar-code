@@ -3,43 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bar Code | Alicante</title>
+    <title>Bar Code | Alicante | Tu voz, tu música, tu copa</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="contenedor" style="margin-top: 5vh;">
+<body class="landing-page">
+
+    <div class="main-wrapper">
         
-        <img src="img/logo.png" alt="Logo El barcode Pub" class="logo-barcode">
+        <header class="hero-section">
+            <div class="glass-header">
+                <img src="img/logo.png" alt="Logo Bar Code Alicante" class="logo-barcode-header">
+                <p class="tagline">Tu voz, tu música, tu copa.</p>
+                <a href="clientes.html" class="boton boton-verde pulse-button">Probar la Experiencia</a>
+            </div>
+        </header>
 
-        <p class="subtitulo">Tu voz, tu música, tu copa.</p>
+        <section class="section-container location-section">
+            <div class="contenedor-landing">
+                <h3><span class="icon">📍</span> Te Esperamos en Alicante</h3>
+                <p class="address">Calle Falsa 123, 03001 Alicante</p>
+                
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d390.1068801861939!2d-0.12942643118018304!3d38.537109551688346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1773741954006!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </iframe>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            <h3><span class="icon">📍</span> Dónde estamos</h3>
-            <p style="font-size: 15px; margin-bottom: 5px; color: var(--text-body);">Calle Falsa 123</p>
-            <p style="font-size: 13px; color: #888;">Alicante</p>
-        </div>
+        <section class="section-container info-section">
+            <div class="contenedor-landing flex-info">
+                
+                <div class="info-block">
+                    <h3><span class="icon">🕒</span> Abierto de...</h3>
+                    <p>Jueves a Domingo: 19:00 - 03:30</p>
+                    <p class="horario-extra">¡Ven a cenar o a por la primera copa!</p>
+                </div>
 
-        <div>
-            <h3><span class="icon">🕒</span> Horario</h3>
-            <p style="font-size: 15px; margin-bottom: 5px; color: var(--text-body);">Jueves a Domingo</p>
-            <p style="font-size: 13px; color: #888;">De 19:00 a 03:30</p>
-        </div>
+                <div class="info-block concept-block">
+                    <h3><span class="icon">💡</span> ¿Qué es Bar Code?</h3>
+                    <p>Fusión urbana de música vibrante, tecnología y ambiente urbano. Donde el código QR de tu mesa es tu mando a distancia.</p>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            <h3><span class="icon">📱</span> Tu Mesa, Tus Reglas</h3>
-            <p style="font-size: 13px; color: #888; margin-bottom: 20px; padding: 0 10px; line-height: 1.5;">
-                Ven a visitarnos, escanea el código QR de tu mesa y toma el control: elige la música de la sala, puntúa los directos y pide desde el móvil sin levantar la mano.
-            </p>
-            
-            <a href="clientes.html" class="boton boton-verde">Probar la Experiencia (Demo)</a>
-        </div>
-
-        <div style="margin-top: 35px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 15px;">
-            <p style="font-size: 11px; color: #555;">© 2026 El barcode Pub</p>
-        </div>
+        <footer class="footer-landing">
+            <div class="glass-footer">
+                <h3><span class="icon">📸</span> Únete a la Comunidad</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/barcode_alicante" target="_blank" class="icon-btn instagram">
+                        <img src="img/instagram-logo.png" alt="Instagram">
+                    </a>
+                    <a href="https://facebook.com/barcode.pub.alicante" target="_blank" class="icon-btn facebook">
+                        <img src="img/facebook-logo.png" alt="Facebook">
+                    </a>
+                </div>
+                <p class="copyright">© 2026 Bar Code Pub</p>
+            </div>
+        </footer>
 
     </div>
 

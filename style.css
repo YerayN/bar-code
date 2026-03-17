@@ -1,3 +1,8 @@
+/* ==========================================================================
+   BAR CODE / EL PARLAMENTO - HOJA DE ESTILOS UNIFICADA
+   ========================================================================== */
+
+/* --- 1. VARIABLES GLOBALES (Tu paleta de colores) --- */
 :root {
     --accent-orange: #FE9400; 
     --accent-orange-hover: #e67e22;
@@ -5,53 +10,80 @@
     --accent-green-hover: #00b34a;
     --accent-dark-btn: #393C45; 
     --bg-body: #101115; 
-    --bg-card: #16171B; 
+    --bg-card: rgba(22, 23, 27, 0.8); /* Fondo con transparencia para el efecto glass */
     --text-heading: #BDBDBD; 
     --text-body: #E0E3EB; 
-    --shadow-card: 0 10px 30px rgba(0,0,0,0.6);
+    --shadow-card: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+/* --- 2. RESETEO BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
     background-color: var(--bg-body);
     color: var(--text-body);
-    margin: 0;
-    padding: 15px;
     text-align: center;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch; /* Para un scroll suave en iPhone */
 }
 
+/* --- 3. COMPONENTES REUTILIZABLES (Cristal, Textos, Logos) --- */
+
+/* La caja principal (Efecto Glassmorphism) */
 .contenedor {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
-    background-color: rgba(22, 23, 27, 0.8);
+    background-color: var(--bg-card);
     border-radius: 20px;
     padding: 25px;
     box-shadow: var(--shadow-card);
     border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-out;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* El logo superior (válido para clientes.html e index.html) */
+.logo-parlamento, .logo-barcode-header, .logo-cabecera {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Títulos y Subtítulos */
 h1 { 
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    background: linear-gradient(135deg, #FE9400 0%, #ffc163 100%);
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #ffc163 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0; 
+    margin: 0 0 5px 0; 
     font-size: 26px;
 }
 
-p.subtitulo { color: var(--text-heading); font-size: 14px; margin-bottom: 30px; font-weight: 400;}
+p.subtitulo { color: var(--text-heading); font-size: 14px; font-weight: 400;}
 
 h3 { 
     color: var(--text-body); 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     padding-bottom: 12px; 
     margin-top: 35px;
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     display: flex;
@@ -61,31 +93,33 @@ h3 {
 
 h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 
+/* --- 4. SISTEMA DE BOTONES --- */
+
 .boton {
     display: block;
-    background: linear-gradient(135deg, #FE9400 0%, #f39c12 100%);
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #f39c12 100%);
     color: #1a1a1a;
-    padding: 14px;
+    padding: 16px;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 700;
     font-size: 16px;
-    margin: 12px auto;
+    margin: 15px auto;
     width: 90%;
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(254, 148, 0, 0.3);
-    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
     outline: none;
 }
 .boton:active { transform: scale(0.98); box-shadow: 0 2px 10px rgba(254, 148, 0, 0.2); }
 
 .boton-verde {
-    background: linear-gradient(135deg, #00C853 0%, #00b34a 100%);
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00b34a 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
 }
-.boton-verde:active { transform: scale(0.98); box-shadow: 0 2px 10px rgba(0, 200, 83, 0.2); }
+.boton-verde:active { box-shadow: 0 2px 10px rgba(0, 200, 83, 0.2); }
 
 .boton-oscuro {
     background-color: var(--accent-dark-btn);
@@ -94,9 +128,18 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     background-image: none;
 }
 .boton-oscuro:hover { background-color: #555; }
-.boton-oscuro:active { transform: scale(0.98); }
 
-/* --- NUEVO: Estilo para la caja de texto de pedir canciones --- */
+/* Estado bloqueado para el botón anti-spam */
+.boton-bloqueado {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #555 !important;
+    box-shadow: none !important;
+}
+
+/* --- 5. INPUTS Y CAJAS DE DATOS (WiFi, Peticiones) --- */
+
 .input-texto {
     width: 90%;
     padding: 14px;
@@ -109,9 +152,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     margin-bottom: 10px;
     outline: none;
 }
-.input-texto:focus {
-    border-color: var(--accent-orange);
-}
+.input-texto:focus { border-color: var(--accent-orange); }
 
 .datos-wifi {
     background-color: #1a1a1a;
@@ -122,8 +163,94 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 }
 .datos-wifi p strong { color: var(--accent-orange); }
 
-/* --- ESTILOS ESPECÍFICOS DE LA CARTA INTERACTIVA --- */
-.carta-body { padding-bottom: 40px; }
+/* --- 6. LANDING PAGE PRINCIPAL (index.html) --- */
+
+.landing-page {
+    /* Imagen de fondo desenfocada */
+    background-image: linear-gradient(rgba(16, 17, 21, 0.9), rgba(16, 17, 21, 0.9)), url('img/background-bar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 30px;
+}
+
+.main-wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.glass-header, .section-container .contenedor-landing, .glass-footer {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.hero-section { text-align: center; margin-top: 3vh; }
+.tagline { color: var(--text-heading); font-size: 14px; margin-bottom: 25px; }
+
+/* Botón con pulso llamativo */
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 200, 83, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+}
+
+/* Mapa e Info */
+.location-section h3 { margin-top: 0; margin-bottom: 15px; border-bottom: none;}
+.address { font-size: 15px; margin-bottom: 15px; font-weight: 600; }
+.map-wrapper {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(254, 148, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.flex-info { display: flex; flex-direction: column; gap: 20px; }
+.info-block h3 { margin-top: 0; margin-bottom: 10px; border-bottom: none;}
+.horario-extra, .info-block.concept-block p { font-size: 12px; color: #888; }
+.info-block.concept-block { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 15px; }
+
+/* Footer y Redes Sociales */
+.footer-landing { text-align: center; }
+.footer-landing h3 { margin-top: 0; border-bottom: none; }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+.icon-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+.icon-btn:active { transform: scale(0.9); }
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.facebook { background-color: #1877F2; }
+.copyright { font-size: 11px; color: #555; margin-top: 15px; }
+
+/* --- 7. CARTA INTERACTIVA (carta.html) --- */
+
+.carta-body { padding-bottom: 40px; padding-top: 15px; }
 
 .caja-alergenos {
     background-color: var(--bg-card);
@@ -169,7 +296,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
 }
 .etiqueta-filtro input { display: none; }
 .etiqueta-filtro:has(input:checked) {
-    background-color: #E53935; /* Rojo alerta */
+    background-color: #E53935; /* Rojo alerta para alérgenos marcados */
     color: white;
 }
 
@@ -210,11 +337,7 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     margin-bottom: 15px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    text-align: left; /* Textos de la carta a la izquierda */
 }
 
 .plato-titulo {
@@ -224,13 +347,14 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     margin-bottom: 8px;
     gap: 10px;
 }
-.plato h3 { margin: 0; color: #fff; font-size: 16px; font-family: 'Poppins', sans-serif; line-height: 1.2;}
+.plato h3 { margin: 0; color: #fff; font-size: 16px; font-family: 'Poppins', sans-serif; line-height: 1.2; border: none; padding: 0;}
 .precio { color: var(--accent-green); font-weight: 700; font-size: 16px; font-family: 'Poppins', sans-serif;}
 .descripcion { color: #aaa; font-size: 13px; margin: 5px 0 10px 0; line-height: 1.4; }
 .alergenos-lista { color: #E53935; font-size: 11px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 5px;}
 .sin-alergenos { color: #888; font-size: 11px; }
 
-/* --- ESTILOS PARA LAS JAMS (Termómetro) --- */
+/* --- 8. LA VOZ DE LAS JAMS Y TERMÓMETRO (jams.html) --- */
+
 .caja-termometro {
     background-color: rgba(22, 23, 27, 0.5);
     padding: 20px;
@@ -247,33 +371,23 @@ h3 span.icon { margin-right: 8px; font-size: 1.2em;}
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    /* Efecto de sombra interior para que parezca hundido */
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .barra-relleno {
     height: 100%;
-    width: 0%; /* Esto lo cambiaremos con JS */
-    /* Un degradado que va de verde a rojo para dar sensación de temperatura */
+    width: 0%; 
     background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-orange) 50%, #E53935 100%);
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Clase para desactivar el botón temporalmente (Anti-Spam) */
-.boton-bloqueado {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none; /* Evita que se pueda hacer clic */
-    background: #555 !important; /* Lo ponemos gris */
-    box-shadow: none !important;
-}
-
-.logo-barcode {
-    width: 100%;
-    max-width: 280px; /* Controla el ancho máximo para móviles */
-    height: auto; /* Mantiene la proporción rectangular */
-    margin-bottom: 25px; /* Separa el logo del título */
-    display: block; /* Para centrarlo horizontalmente */
-    margin-left: auto;
-    margin-right: auto;
+/* Ajuste para que los iconos de redes encajen perfectos en el botón circular */
+.icon-btn img {
+    /* Aumentamos dramáticamente el tamaño para que llene el círculo */
+    width: 56px; 
+    height: auto;
+    display: block;
+    
+    /* Pequeño truco para que queden visualmente centrados en el círculo */
+    transform: translateY(1px); 
 }
