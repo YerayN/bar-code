@@ -1,14 +1,43 @@
+// --- 1. BASE DE DATOS DE PLATOS (Nivel Premium) ---
 const baseDeDatosPlatos = [
-    { categoria: "Cervezas", nombre: "Estrella Galicia", descripcion: "Clásica, rubia y súper refrescante.", precio: "2.50€", alergenos: ["Gluten"] },
-    { categoria: "Cervezas", nombre: "BrewDog Punk IPA", descripcion: "Explosión de lúpulo, amarga y con carácter.", precio: "4.50€", alergenos: ["Gluten"] },
-    { categoria: "Cervezas", nombre: "Guinness Draught", descripcion: "Negra, espuma cremosa, sabor a café.", precio: "4.50€", alergenos: ["Gluten"] },
-    { categoria: "Cócteles", nombre: "Mojito Clásico", descripcion: "Ron añejo, hierbabuena fresca y lima.", precio: "7.00€", alergenos: [] },
-    { categoria: "Cócteles", nombre: "Gin Tonic Premium", descripcion: "Ginebra de la casa con tónica.", precio: "8.00€", alergenos: [] },
-    { categoria: "Para Picar", nombre: "Nachos Supremos", descripcion: "Con queso fundido, jalapeños, guacamole.", precio: "9.50€", alergenos: ["Lactosa"] },
-    { categoria: "Para Picar", nombre: "Patatas Bravas de Verdad", descripcion: "Salsa picante secreta de la casa.", precio: "6.00€", alergenos: [] },
-    { categoria: "Para Picar", nombre: "Tiras de Pollo Crujiente", descripcion: "Rebozado casero con salsa de mostaza.", precio: "7.50€", alergenos: ["Gluten", "Huevo"] },
-    { categoria: "Burgers", nombre: "La Burger Americana", descripcion: "Doble burger, doble bacon y queso cheddar.", precio: "12.00€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
-    { categoria: "Burgers", nombre: "La Vegana Salvaje", descripcion: "Hamburguesa Beyond Meat, pan cristal.", precio: "11.50€", alergenos: ["Gluten"] }
+    // 🍺 CERVEZAS DE GRIFO
+    { categoria: "Cervezas de Grifo", nombre: "Caña Estrella Galicia", descripcion: "Clásica, rubia y súper refrescante. 25cl.", precio: "2.00€", alergenos: ["Gluten"] },
+    { categoria: "Cervezas de Grifo", nombre: "Pinta Guinness Draught", descripcion: "Negra, espuma cremosa, con ese toque a café y caramelo. 50cl.", precio: "5.00€", alergenos: ["Gluten"] },
+    { categoria: "Cervezas de Grifo", nombre: "Jarra Paulaner Weissbier", descripcion: "Cerveza de trigo alemana, turbia y con notas a plátano.", precio: "5.50€", alergenos: ["Gluten"] },
+
+    // 🍻 CERVEZAS CRAFT (ARTESANALES)
+    { categoria: "Cervezas Craft", nombre: "BrewDog Punk IPA", descripcion: "Explosión de lúpulo, amarga, afrutada y con muchísimo carácter.", precio: "4.50€", alergenos: ["Gluten"] },
+    { categoria: "Cervezas Craft", nombre: "Althaia Artesana", descripcion: "IPA mediterránea, cítrica y muy fácil de beber.", precio: "4.00€", alergenos: ["Gluten"] },
+
+    // 🍷 VINOS Y VERMUT
+    { categoria: "Vinos y Vermut", nombre: "Vermut Casero de Grifo", descripcion: "Servido muy frío, con su rodaja de naranja y aceituna.", precio: "3.50€", alergenos: ["Sulfitos"] },
+    { categoria: "Vinos y Vermut", nombre: "Copa Tarima Hill", descripcion: "Tinto potente, goloso y con notas a madera. Espectacular.", precio: "4.00€", alergenos: ["Sulfitos"] },
+
+    // 🍹 CÓCTELES Y COPAS
+    { categoria: "Cócteles", nombre: "Mojito Clásico", descripcion: "Ron añejo, hierbabuena fresca, lima y azúcar de caña.", precio: "7.00€", alergenos: [] },
+    { categoria: "Cócteles", nombre: "Moscow Mule", descripcion: "Vodka, cerveza de jengibre y zumo de lima. Servido en taza de cobre.", precio: "8.00€", alergenos: [] },
+    { categoria: "Cócteles", nombre: "Aperol Spritz", descripcion: "Aperol, prosecco y un golpe de soda. El tardeo perfecto.", precio: "6.50€", alergenos: ["Sulfitos"] },
+    { categoria: "Cócteles", nombre: "Gin Tonic Premium", descripcion: "Ginebra seca elaborada con botánicos, tónica y twist de limón.", precio: "8.50€", alergenos: [] },
+
+    // 🍟 PARA COMPARTIR (STARTERS)
+    { categoria: "Para Picar", nombre: "Nachos Supremos", descripcion: "Totopos de maíz bañados en queso fundido, pulled pork, jalapeños y pico de gallo.", precio: "11.50€", alergenos: ["Lactosa"] },
+    { categoria: "Para Picar", nombre: "Patatas Bravas de Verdad", descripcion: "Patata crujiente por fuera, tierna por dentro, y nuestra salsa brava secreta.", precio: "6.50€", alergenos: [] },
+    { categoria: "Para Picar", nombre: "Tequeños Venezolanos", descripcion: "6 deditos de queso fundido envueltos en masa crujiente, acompañados de salsa de frutos rojos.", precio: "8.00€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
+    { categoria: "Para Picar", nombre: "Croquetas de Rabo de Toro", descripcion: "Ración de 6 unidades, melosas por dentro y con rebozado panko.", precio: "9.00€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
+    { categoria: "Para Picar", nombre: "Tiras de Pollo Crujiente", descripcion: "Pechuga marinada con rebozado extracrujiente y salsa mostaza miel.", precio: "7.50€", alergenos: ["Gluten", "Huevo", "Mostaza"] },
+
+    // 🍔 BURGERS & SMASH
+    { categoria: "Burgers", nombre: "Smash Burger Doble", descripcion: "Dos discos de vaca madurada aplastados, doble cheddar, bacon crujiente y salsa secreta.", precio: "12.50€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
+    { categoria: "Burgers", nombre: "La Trufada Premium", descripcion: "200g de carne, queso brie fundido, cebolla caramelizada y mayonesa de trufa negra.", precio: "13.50€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
+    { categoria: "Burgers", nombre: "La Vegana Salvaje", descripcion: "Hamburguesa tipo Beyond Meat, pan brioche vegano, lechuga, tomate y veganesa.", precio: "12.00€", alergenos: ["Gluten", "Soja"] },
+    
+    // 🍕 PIZZAS RÚSTICAS
+    { categoria: "Pizzas Rústicas", nombre: "Margarita Di Bufala", descripcion: "Masa madre de fermentación lenta, tomate San Marzano, mozzarella fresca y albahaca.", precio: "10.00€", alergenos: ["Gluten", "Lactosa"] },
+    { categoria: "Pizzas Rústicas", nombre: "Barbacoa Ahumada", descripcion: "Carne picada, pulled pork, bacon, cebolla roja y salsa BBQ.", precio: "12.50€", alergenos: ["Gluten", "Lactosa", "Soja"] },
+
+    // 🍰 POSTRES GOLOSOS
+    { categoria: "Postres", nombre: "Tarta de Queso Fluida", descripcion: "Al horno, muy cremosa por dentro y con base de galleta Lotus.", precio: "6.00€", alergenos: ["Gluten", "Lactosa", "Huevo"] },
+    { categoria: "Postres", nombre: "Brownie Volcán", descripcion: "Brownie de chocolate belga caliente con bola de helado de vainilla encima.", precio: "5.50€", alergenos: ["Gluten", "Lactosa", "Huevo", "FrutosSecos"] }
 ];
 
 let alergenosSeleccionados = [];
